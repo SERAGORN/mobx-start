@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {provider, Provider} from 'mobx-react'
-import stores from './stores'
+import {Provider} from 'mobx-react'
+import Store from './stores/index'
 import Page from './Page'
+const store = new Store("route")
+const routes = store.returnRoutes()
 
 class App extends Component {
   render() {
     return (
-      <Provider {...stores}>
+      <Provider {...routes}>
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
