@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {provider, Provider} from 'mobx-react'
+import stores from './stores'
+import Page from './Page'
 
 class App extends Component {
   render() {
     return (
+      <Provider {...stores}>
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -20,7 +24,9 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <Page/>
       </div>
+      </Provider>
     );
   }
 }
